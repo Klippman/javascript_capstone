@@ -15,6 +15,7 @@ var shuffle = puzzles[Math.floor(Math.random() * puzzles.length)];
 var hint = document.querySelector(".hint");
 
 
+
 function checkLetter(store) {
 var team1 = shuffle.split("");
     for (var i = 0; i < team1.length; i++){
@@ -27,10 +28,16 @@ var team1 = shuffle.split("");
 document.addEventListener("keypress", function(event){
     keyBoardLetter = event.key.toUpperCase();
     checkLetter(keyBoardLetter);
-})
+
 
 // attempting to get hints to display below "next puzzle" button
-let hintObject = {DALLAS: "America's team", ATLANTA: "Dirty Bird", DENVER: "John Elway", CAROLINA: "Cam Newton", MIAMI: "Dan Marino", OAKLAND: "Bo Jackson", ARIZONA: "Red Bird", BUFFALO: "Jim Kelly", CHICAGO: "Walter Payton", DETROIT: "Barry Sanders", HOUSTON: "J.J. Watt", SEATTLE: "Twelfth Man"};
+var hintObject = {"DALLAS   COWBOYS": "America's team", "ATLANTA  FALCONS": "Dirty Bird", "DENVER   BRONCOS": "John Elway", "CAROLINA PANTHERS": "Cam Newton", "MIAMI    DOLPHINS": "Dan Marino", "OAKLAND  RAIDERS": "Bo Jackson", "ARIZONA  CARDINALS": "Red Bird", "BUFFALO  BILLS": "Jim Kelly", "CHICAGO  BEARS": "Walter Payton", "DETROIT  LIONS": "Barry Sanders", "HOUSTON  TEXANS": "J.J. Watt", "SEATTLE  SEAHAWKS": "Twelfth Man"};
 
-hint.innerHTML = "Clue: ${hintObject[shuffle]}";
+hint.innerHTML = `Clue: ${hintObject[shuffle]}`;
+
+})
+
+// window.onload = function startGame (){
+//         alert("Guess a letter to begin!!");
+//     }
 
